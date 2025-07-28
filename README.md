@@ -11,6 +11,25 @@
             box-sizing: border-box;
         }
         
+        /* GitHub表示時の不要要素を非表示 */
+        body::before,
+        body::after,
+        html::before,
+        html::after {
+            display: none !important;
+        }
+        
+        /* ページ上下の余計な要素を非表示 */
+        body > *:not(.container):not(script) {
+            display: none !important;
+        }
+        
+        /* GitHubの余計な表示を隠す */
+        [class*="menopause-diet-app"],
+        [id*="menopause-diet-app"] {
+            display: none !important;
+        }
+        
         body {
             font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'Meiryo', sans-serif;
             background: linear-gradient(135deg, #ff9a56 0%, #ff6b35 50%, #f7931e 100%);
@@ -19,16 +38,25 @@
             line-height: 1.6;
             margin: 0;
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* 確実にコンテナだけを表示 */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .container {
             max-width: 500px;
-            margin: 0 auto;
+            width: 100%;
             background: white;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             overflow: hidden;
             position: relative;
+            z-index: 1000;
         }
         
         .header {
