@@ -15,39 +15,42 @@
             font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'Meiryo', sans-serif;
             background: linear-gradient(135deg, #ff9a56 0%, #ff6b35 50%, #f7931e 100%);
             min-height: 100vh;
-            padding: 10px;
+            padding: 5px;
             line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 500px;
             margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             overflow: hidden;
+            position: relative;
         }
         
         .header {
             background: linear-gradient(135deg, #ff9a56, #ff6b35);
             color: white;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
         }
         
         .header h1 {
-            font-size: clamp(18px, 5vw, 24px);
-            margin-bottom: 8px;
+            font-size: clamp(16px, 4.5vw, 22px);
+            margin-bottom: 6px;
             font-weight: 700;
         }
         
         .header p {
-            font-size: clamp(12px, 3.5vw, 14px);
+            font-size: clamp(11px, 3vw, 13px);
             opacity: 0.95;
         }
         
         .content {
-            padding: 20px;
+            padding: 15px;
         }
         
         .question-container {
@@ -55,11 +58,11 @@
         }
         
         .question {
-            font-size: clamp(16px, 4vw, 18px);
+            font-size: clamp(15px, 3.8vw, 17px);
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #333;
-            line-height: 1.5;
+            line-height: 1.4;
         }
         
         .options {
@@ -69,16 +72,19 @@
         }
         
         .option {
-            padding: 15px;
+            padding: 12px 15px;
             border: 2px solid #e8e8e8;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s ease;
             background: #fafafa;
-            font-size: clamp(14px, 3.5vw, 16px);
-            line-height: 1.4;
+            font-size: clamp(13px, 3.2vw, 15px);
+            line-height: 1.3;
             word-break: keep-all;
             overflow-wrap: break-word;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
         
         .option:hover {
@@ -289,28 +295,59 @@
         /* スマホ対応の追加調整 */
         @media (max-width: 480px) {
             body {
-                padding: 5px;
+                padding: 2px;
             }
             
             .container {
-                border-radius: 12px;
+                border-radius: 8px;
+                margin: 2px;
             }
             
             .content {
-                padding: 15px;
-            }
-            
-            .option {
                 padding: 12px;
             }
             
+            .option {
+                padding: 10px 12px;
+                font-size: 14px;
+                min-height: 48px;
+            }
+            
             .illustration {
-                width: 80px;
-                height: 80px;
+                width: 70px;
+                height: 70px;
             }
             
             .metabolic-icon, .water-icon, .appetite-icon, .sleep-icon, .hormone-icon {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            
+            .header {
+                padding: 12px;
+            }
+            
+            .question-container {
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* 極小画面対応 */
+        @media (max-width: 320px) {
+            .option {
+                font-size: 13px;
+                padding: 8px 10px;
+            }
+            
+            .question {
+                font-size: 14px;
+            }
+            
+            .header h1 {
+                font-size: 16px;
+            }
+            
+            .header p {
+                font-size: 11px;
             }
         }
     </style>
@@ -585,4 +622,4 @@
         startQuiz();
     </script>
 </body>
-</html># menopause-diet-app
+</html>
